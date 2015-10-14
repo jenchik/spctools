@@ -42,3 +42,7 @@ func GetField(obj interface{}, name string) (interface{}, error) {
 	}
 	return field.Interface(), nil
 }
+
+func GetName(obj interface{}) string {
+    return reflect.Indirect(reflect.ValueOf(obj)).Type().Name()
+}
